@@ -17,6 +17,10 @@ body * {
     line-height: 160%;
 }
 
+header{
+    margin-top:32px;
+}
+
 header img{
     display: flex;
     margin:auto;
@@ -25,6 +29,11 @@ header img{
     border-radius:50%;
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     padding: 4px;
+}
+
+header img:hover{
+    transform: scale(1.1);
+    transition:transform .3s;
 }
 
 ul{
@@ -37,7 +46,7 @@ main{
     margin: auto;
     display:grid;
     gap:24px;
-    margin-top: 32px;
+    margin: 32px auto;
 
     /*-- Também serve para liberar a propriedade gap, no lugar do display:grid;
     display: flex;
@@ -73,6 +82,13 @@ section ul{
     gap: 16px;
     margin-top: 24px;
 }
+section ul li{
+    transition: transform .3s;
+   }
+
+section ul li:hover{
+    transform: scale(1.1);
+}
 
 .games-list img{
     width: 90px;
@@ -82,4 +98,78 @@ section ul{
 .channel-list img{
     width: 70px;
     border-radius: 50%;
+    border: 1px solid #443E54;
 }
+
+/* animations */
+
+header div{
+    animation: fromTop .5s .2s backwards;
+}
+
+main section {
+    animation: fromRight .5s backwards;
+}
+
+main section:nth-child(1){
+    animation-delay: 0;
+}
+
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+
+main section:nth-child(3){
+    animation-delay: .6s;
+}
+
+ @keyframes fromTop {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromRight{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+@keyframes fromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+*/
